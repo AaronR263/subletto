@@ -4,7 +4,7 @@ import { verifyJwt } from "@/helpers/jwt";
 
 export async function GET(request) {
     try {
-        const accessToken = request.headers.get("Authorization");
+        const accessToken = await request.headers.get("Authorization");
         const decoded = verifyJwt(accessToken);
 
         if (!accessToken || !decoded) {
