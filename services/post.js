@@ -1,5 +1,6 @@
 export const getAllPosts = (accessToken) => {
     return new Promise((resolve, reject) => {
+        console.log("Access Token:", accessToken)
         fetch('/api/getPosts', {
             method: 'GET',
             headers: {

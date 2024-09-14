@@ -8,6 +8,7 @@ const PostList = () => {
   const [postList, setPostList] = useState();
 
   useEffect(() => {
+    console.log("USE EFFECT ACCESS TOKEN:", session)
     getAllPosts(session?.user.accessToken)
       .then((res) => {
         setPostList(res.posts);
